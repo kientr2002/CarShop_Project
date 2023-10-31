@@ -28,7 +28,6 @@ const fetchProductsImg = async () => {
     setCarImg(response.data["img"]);
     setName(response.data["name"]);
     setComment(response.data["comment_list"]);
-    // console.log(carImg);
     setSpecification(response.data["specification"]); // Lưu danh sách sản phẩm vào state
     setPrice(response.data["specification"][6].value);
   } 
