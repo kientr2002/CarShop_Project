@@ -1,6 +1,14 @@
 import React from "react";
 import "./../../Style-header.css";
 import "./Header.css";
+
+function handleOut(event){
+   localStorage.removeItem('whoLogin');
+   localStorage.removeItem('userId');
+   // console.log(localStorage.getItem('userId'));
+   window.location.reload();
+}
+
 export default function AdminHeader(){
     const notificationCount = 3;
     return(
@@ -10,7 +18,7 @@ export default function AdminHeader(){
                     <div className="container">
                         <a href="#" className="navbar-brand" ><img src="https://upload.wikimedia.org/wikipedia/vi/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png" alt="" width="70" height="70"/></a>
                         <div className="settings">
-                            <button className="btn" type="button"><i class='bx bx-power-off' style={{ fontSize: '2em' }}></i></button>
+                            <button className="btn" type="button" onClick={handleOut}><i class='bx bx-power-off' style={{ fontSize: '2em' }}></i></button>
                         </div>           
                     </div>        
                 </div>
