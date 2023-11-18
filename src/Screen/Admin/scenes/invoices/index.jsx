@@ -8,7 +8,7 @@ import axios from 'axios';
 const Invoices = () => {
   const [invoices, setInvoices] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost/Model/BuyHistoryInvoice-data.php')
+    axios.get('http://localhost/CarShop_Project/BE/Model/BuyHistoryInvoice-data.php')
       .then(response => setInvoices(response.data))
       .catch(error => console.log(error));
   }, []);

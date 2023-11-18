@@ -9,7 +9,7 @@ const Comments = () => {
   const colors = tokens(theme.palette.mode);
   const [comment, setComment] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost/Model/commentView-data.php')
+    axios.get('http://localhost/CarShop_Project/BE/Model/commentView-data.php')
       .then(response => setComment(response.data))
       .catch(error => console.log(error));
   }, []);

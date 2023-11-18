@@ -11,7 +11,7 @@ const Contacts = () => {
   const colors = tokens(theme.palette.mode);
   const [account, setAccount] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost/Model/Account-data.php')
+    axios.get('http://localhost/CarShop_Project/BE/Model/Account-data.php')
       .then(response => setAccount(response.data))
       .catch(error => console.log(error));
   }, []);

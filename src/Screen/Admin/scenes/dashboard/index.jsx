@@ -24,7 +24,7 @@ const Dashboard = () => {
   let numOrder = 0;
   let numComment = 0;
     useEffect(() => {
-      axios.get('http://localhost/Model/Account-data.php')
+      axios.get('http://localhost/CarShop_Project/BE/Model/Account-data.php')
         .then(response => setAccount(response.data))
         .catch(error => console.log(error));
     }, []);
@@ -34,7 +34,7 @@ const Dashboard = () => {
       }
     }
     useEffect(() => {
-      axios.get('http://localhost/Model/ProductView-data.php')
+      axios.get('http://localhost/CarShop_Project/BE/Model/ProductView-data.php')
         .then(response => setProducts(response.data))
         .catch(error => console.log(error));
     }, []);
@@ -42,7 +42,7 @@ const Dashboard = () => {
       numProducts++;
     }   
     useEffect(() => {
-      axios.get('http://localhost/Model/Order-data.php')
+      axios.get('http://localhost/CarShop_Project/BE/Model/Order-data.php')
         .then(response => setOrder(response.data))
         .catch(error => console.log(error));
     }, []);
@@ -50,7 +50,7 @@ const Dashboard = () => {
       numOrder++;
     }  
     useEffect(() => {
-      axios.get('http://localhost/Model/Comment-data.php')
+      axios.get('http://localhost/CarShop_Project/BE/Model/Comment-data.php')
         .then(response => setComment(response.data))
         .catch(error => console.log(error));
     }, []);
@@ -58,7 +58,7 @@ const Dashboard = () => {
       numComment++;
     } 
     useEffect(() => {
-      axios.get('http://localhost/Model/Cart-data.php')
+      axios.get('http://localhost/CarShop_Project/BE/Model/Cart-data.php')
         .then(response => setCart(response.data))
         .catch(error => console.log(error));
     }, []);

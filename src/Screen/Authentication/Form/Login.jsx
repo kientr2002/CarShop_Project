@@ -33,6 +33,8 @@ const FormLogin = (props) => {
               props.onLogin(account[i].id);
             } else if(account[i].role == 'admin'){
               // Tạo điều hướng tới Page dành cho admin
+              props.onLogin('admin');
+              navigate('/admin');
             } else {
               //NOTHING
             }

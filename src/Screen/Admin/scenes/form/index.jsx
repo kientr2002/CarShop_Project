@@ -7,7 +7,7 @@ const Form = () => {
   const [account, setAccount] = useState([]);
   const [Warning, setWarning] = useState([]);
   useEffect(() => {
-      axios.get('http://localhost/Model/Account-data.php')
+      axios.get('http://localhost/CarShop_Project/BE/Model/Account-data.php')
         .then(response => setAccount(response.data))
         .catch(error => console.log(error));
     }, []);
@@ -103,7 +103,7 @@ const Form = () => {
       user_question: question,
       user_answer: answer,
     };
-    axios.post('http://localhost/Model/registerAdmin-data.php', data)
+    axios.post('http://localhost/CarShop_Project/BE/Model/registerAdmin-data.php', data)
     .then(response => {
       // Xử lý kết quả trả về nếu cần
       alert("Khởi tạo thành công!");

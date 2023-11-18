@@ -8,6 +8,7 @@ import FullScreenBackground from "../../component/Background/FullScreenBackgroun
 function Authentication(props) {
   return (
     <Routes>
+      <Route path="/admin" element={<Admin />} />
       <Route path="/" element={<AuthoMain />} />
       <Route path="/signin" element={<AuthoMain />} />
       <Route path="/register" element={<Register />} />

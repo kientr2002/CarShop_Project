@@ -12,10 +12,11 @@ import Product from '../../component/Product/Product';
 import Payment from '../../component/Product/Payment';
 import FormForgotPassword from '../Authentication/Form/ForgotPassword';
 import FormRegister from '../Authentication/Form/Register';
-function User() {
+function User(props) {
   const [isLogin, setIslogin] = useState('No');
   const handleLogin = (loginStatus) => {
     setIslogin(loginStatus);
+    props.setWhoLogin(loginStatus);
   };
 
   useEffect(()=>{

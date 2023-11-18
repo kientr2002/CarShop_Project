@@ -12,7 +12,7 @@ import axios from 'axios';
 const Product = () => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost/Model/ProductView-data.php')
+    axios.get('http://localhost/CarShop_Project/BE/Model/ProductView-data.php')
       .then(response => setProduct(response.data))
       .catch(error => console.log(error));
   }, []);

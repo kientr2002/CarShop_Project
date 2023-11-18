@@ -50,6 +50,7 @@ function CustomCar(props){
     const navigate = useNavigate();
 
     const id = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+
     const handleAddToCart = () => {
         console.log(props.customer_id == "No");
         if(props.customer_id == "No"){
@@ -57,7 +58,7 @@ function CustomCar(props){
             
             navigate("/login");
         }else{
-
+            alert(id);
             addToCart( id, props.customer_id, props.car_id, color, wheel, props.name, props.price, props.carImg[color][wheel][0].url);
             navigate("/cart");
         }
