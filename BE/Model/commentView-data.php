@@ -18,8 +18,7 @@ if ($conn->connect_error) {
 // lấy dữ liệu từ bảng thương hiệu
 $sql = "SELECT comment_rate.comment_id as id, account.name, car.name as car_name, write_comment_rate.date_time, comment_rate.content, comment_rate.rate 
 FROM account
-INNER JOIN customer ON account.id = customer.customer_id 
-INNER JOIN write_comment_rate ON customer.customer_id = write_comment_rate.customer_id
+INNER JOIN write_comment_rate ON account.id = write_comment_rate.customer_id
 INNER JOIN comment_rate ON write_comment_rate.comment_id = comment_rate.comment_id
 INNER JOIN car ON car.car_id = write_comment_rate.car_id;
 ";

@@ -133,16 +133,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
-              title="Tạo Admin"
-              to="/form"
-              icon={<PersonOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-
-
-          
+                    
           </Box>
         </Menu>
       </ProSidebar>

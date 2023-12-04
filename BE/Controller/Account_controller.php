@@ -3,8 +3,8 @@ header("Access-Control-Allow-Origin: http://localhost:3000");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 header('Content-Type: application/json');
-require_once "../Model/Car_model.php";
-class CarController{
+require_once "../Model/Account-data.php";
+class AccountController{
     function get_img($id){
         $car = new Car($id);
         return $car->get_img();
@@ -22,7 +22,9 @@ class CarController{
         $comment = new Comment($customer_id, $car_id, $content, $rating);
         return $comment->post_comment_rating();
     }
+
 };
+
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
     $id = $_GET["id"];
@@ -33,30 +35,32 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     $specification = $carController->get_specification($id);
     $comment_list = $carController->get_comment_rating($id);
     
-    $obj1 = json_decode($img );
-    $obj2 = json_decode($specification);
-    $obj3= json_decode($comment_list);
+$obj1 = json_decode($img );
+$obj2 = json_decode($specification);
+$obj3= json_decode($comment_list);
 
-    // Nối hai đối tượng JSON lại với nhau
-    $objResult = (object)array_merge((array)$obj1, (array)$obj2,(array)$obj3);
+// Nối hai đối tượng JSON lại với nhau
+$objResult = (object)array_merge((array)$obj1, (array)$obj2,(array)$obj3);
 
-    // Chuyển đối tượng kết quả thành chuỗi JSON
-    $jsonResult = json_encode($objResult);
+// Chuyển đối tượng kết quả thành chuỗi JSON
+$jsonResult = json_encode($objResult);
 
-        echo $jsonResult;
-    }
+    echo $jsonResult;
+}
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $carController = new CarController();
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $carController = new CarController();
 
-        $customer_id = $_POST["customer_id"];
-        $car_id = $_POST["car_id"];
-        $rating = $_POST["rating"];
-        $content = $_POST["content"];
-        // echo $customer_id." ".$car_id . " ".$content." ".$rating;
-        $response = $carController->post_comment_rating($customer_id, $car_id, $content,$rating);
-        echo json_encode ($response);
-    }
+    $customer_id = $_POST["customer_id"];
+    $car_id = $_POST["car_id"];
+    $rating = $_POST["rating"];
+    $content = $_POST["content"];
+    // echo $customer_id." ".$car_id . " ".$content." ".$rating;
+
+    $response = $carController->post_comment_rating($customer_id, $car_id, $content,$rating);
+    echo json_encode ($response);
+
+}
 
 ?>
 

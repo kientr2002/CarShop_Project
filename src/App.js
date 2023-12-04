@@ -15,8 +15,17 @@ export default function App() {
 
   return (
     <div className="Body">
-      {whoLogin !== "admin" && <User setWhoLogin={setWhoLogin} />}
-      {whoLogin === "admin" && <Admin />}
+      {
+        whoLogin !== "admin" ? (
+          whoLogin !== "blockcustomer" ? (
+            <User setWhoLogin={setWhoLogin} />
+          ) : (
+            <p>You are blocked from accessing this page.</p>
+          )
+        ) : (
+          <Admin />
+        )
+      }
     </div>
   );
 }

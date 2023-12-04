@@ -1,6 +1,7 @@
 import React from "react";
 import "./../../Style-header.css";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 function handleOut(event){
    localStorage.removeItem('whoLogin');
@@ -15,12 +16,16 @@ export default function AdminHeader(){
         <div className="Header">
             <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container-fluid">
-                    <div className="container">
-                        <a href="#" className="navbar-brand" ><img src="https://upload.wikimedia.org/wikipedia/vi/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png" alt="" width="70" height="70"/></a>
-                        <div className="settings">
-                            <button className="btn" type="button" onClick={handleOut}><i class='bx bx-power-off' style={{ fontSize: '2em' }}></i></button>
-                        </div>           
-                    </div>        
+                    {/* <a class="navbar-brand">Navbar</a> */}
+                    <a className="navbar-brand" >
+                        <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png" alt="" width="50" height="50"/>
+                    </a>
+                    <div className="settings">
+                        <button class="btn btn-outline-success" type="submit" onClick={handleOut}>
+                        <Link to="/login" className="btn" type="button">Đăng Xuất</Link>
+                        </button>
+                        {/* <button className="btn" type="button" onClick={handleOut}><i class='bx bx-power-off' style={{ fontSize: '2em' }}></i></button> */}
+                    </div>           
                 </div>
             </nav>
         </div>

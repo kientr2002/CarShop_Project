@@ -36,7 +36,6 @@ function Admin() {
                 <Route path="/formaccount" element={<FormAccount />} />
                 <Route path="/comments" element={<Comments />} />
                 <Route path="/product" element={<Product />} />
-                <Route path="/product" element={<Product />} />
               </Routes>
             </main>
           </div>

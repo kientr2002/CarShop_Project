@@ -51,6 +51,16 @@ CREATE TABLE `account` (
 
 INSERT INTO `account` (`id`, `email`, `password`, `phone_number`, `name`, `birthday`, `address`, `avatar`, `security_question`, `security_answer`, `state`, `role`) VALUES
 (400, 'kientran@gmail.com', '1234', '01234567', 'Kiên Trần', '2023-04-21', 'Linh Trung, Thủ Đức', 'any', 'Sở thích của bạn là gì', 'Xem phim', 'True', 'admin'),
+(401, 'nguyenlinh@gmail.com', '5678', '09876543', 'Nguyễn Linh', '1990-12-15', 'Quận 1, TP.HCM', 'another', 'Màu sắc yêu thích của bạn là gì', 'Xanh dương', 'True', 'customer'),
+(402, 'phuonganh@yahoo.com', 'abcd', '01239876', 'Phương Anh', '1985-09-30', 'Quận 7, TP.HCM', 'some', 'Thú cưng bạn thích là gì', 'Chó', 'True', 'blockcustomer'),
+(403, 'thanhnguyen@hotmail.com', 'efgh', '09871234', 'Thanh Nguyễn', '1995-06-18', 'Quận 10, TP.HCM', 'avatar1', 'Bạn muốn làm gì vào cuối tuần?', 'Đi du lịch', 'True', 'admin'),
+(404, 'minhvuong@gmail.com', 'ijkl', '01237890', 'Minh Vương', '2000-03-25', 'Quận 3, TP.HCM', 'avatar2', 'Đội bóng bạn yêu thích là gì?', 'Manchester United', 'True', 'customer'),
+(405, 'thuytrang@yahoo.com', 'mnop', '01928374', 'Thùy Trang', '1988-11-30', 'Quận 5, TP.HCM', 'avatar3', 'Nơi bạn muốn đến trong kỳ nghỉ?', 'Hawaii', 'True', 'blockcustomer'),
+(406, 'hoanglong@gmail.com', 'qrst', '05671234', 'Hoàng Long', '1992-07-22', 'Quận Bình Thạnh, TP.HCM', 'avatar4', 'Nghề nghiệp mơ ước của bạn?', 'Chủ doanh nghiệp', 'True', 'admin'),
+(407, 'tuananh@hotmail.com', 'uvwx', '07654321', 'Tuấn Anh', '1987-09-12', 'Quận 9, TP.HCM', 'avatar5', 'Thức uống yêu thích của bạn là gì?', 'Cà phê', 'True', 'customer'),
+(408, 'thithao@yahoo.com', 'yzab', '03456789', 'Thị Thảo', '1994-02-28', 'Quận Gò Vấp, TP.HCM', 'avatar6', 'Môn thể thao bạn yêu thích là gì?', 'Bóng đá', 'True', 'blockcustomer'),
+(409, 'honglinh@gmail.com', '5678', '09871234', 'Hồng Linh', '1999-10-05', 'Quận Tân Bình, TP.HCM', 'avatar7', 'Bạn muốn trở thành ai khi lớn lên?', 'Giáo viên', 'True', 'admin'),
+(410, 'quanghuy@yahoo.com', 'abcd', '07654321', 'Quang Huy', '1996-08-20', 'Quận 2, TP.HCM', 'avatar8', 'Nơi bạn muốn sống trong tương lai?', 'Canada', 'True', 'customer'),
 (500, 'huynhnhan@gmail.com', '1234', '01234567', 'Huỳnh Nhân', '2023-04-21', 'Linh Trung, Thủ Đức', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Sở thích của bạn là gì', 'Xem phim', 'True', 'customer'),
 (600, 'hoangnam@gmail.com', '1234', '01234567', 'Hoàng Nam', '2023-04-21', 'Linh Trung, Thủ Đức', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Sở thích của bạn là gì', 'Xem phim', 'True', 'customer'),
 (700, 'chungquang@gmail.com', '1234', '01234567', 'Chúng Quang', '2023-04-21', 'Linh Trung, Thủ Đức', 'any', 'Sở thích của bạn là gì', 'Xem phim', 'True', 'customer');
@@ -131,7 +141,7 @@ CREATE TABLE `car` (
   `max_speed` varchar(255) DEFAULT NULL,
   `wattage` varchar(255) DEFAULT NULL,
   `torque` varchar(255) DEFAULT NULL,
-  `fuel_comsumption` varchar(255) DEFAULT NULL,
+  `fuel_consumption` varchar(255) DEFAULT NULL,
   `emissions_co2` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -139,7 +149,7 @@ CREATE TABLE `car` (
 -- Đang đổ dữ liệu cho bảng `car`
 --
 
-INSERT INTO `car` (`car_id`, `price`, `quantity`, `name`, `brand`, `img`, `acceleration`, `max_speed`, `wattage`, `torque`, `fuel_comsumption`, `emissions_co2`) VALUES
+INSERT INTO `car` (`car_id`, `price`, `quantity`, `name`, `brand`, `img`, `acceleration`, `max_speed`, `wattage`, `torque`, `fuel_consumption`, `emissions_co2`) VALUES
 (1000, 3740000000, 3, '718 Boxster', 'Porsche', 'https://files.porsche.com/filestore/image/multimedia/none/982-718-c7-modelimage-sideshot/thumbwhite/230138a1-e874-11ea-80cd-005056bbdc38;sK;twebp/porsche-thumbwhite.webp', '4.7', '275', '220', '380', '8.1', '180'),
 (1001, 3620000000, 2, '718 Cayman', 'Porsche', 'https://files.porsche.com/filestore/image/multimedia/none/982-718-c7-se-modelimage-sideshot/thumbwhite/7bdc3629-4ea4-11ed-80f7-005056bbdc38;sK;twebp/porsche-thumbwhite.webp', '4.9', '275', '220', '380', '8.0', '181'),
 (1002, 7130000000, 3, '911 Carrera', '', '', '4.2', '293', '283', '450', '8.5', '190'),
@@ -187,7 +197,7 @@ CREATE TABLE `cart` (
   `max_speed` varchar(255) DEFAULT NULL,
   `wattage` varchar(255) DEFAULT NULL,
   `torque` varchar(255) DEFAULT NULL,
-  `fuel_comsumption` varchar(255) DEFAULT NULL,
+  `fuel_consumption` varchar(255) DEFAULT NULL,
   `emissions_co2` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -199,7 +209,7 @@ CREATE TABLE `cart` (
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`id`, `customer_id`, `car_id`, `price`, `quantity`, `name`,`color`,`wheel`, `brand`, `img`, `acceleration`, `max_speed`, `wattage`, `torque`, `fuel_comsumption`, `emissions_co2`) VALUES
+INSERT INTO `cart` (`id`, `customer_id`, `car_id`, `price`, `quantity`, `name`,`color`,`wheel`, `brand`, `img`, `acceleration`, `max_speed`, `wattage`, `torque`, `fuel_consumption`, `emissions_co2`) VALUES
 ('1', 500, 1000, 3740000000, 3, '718 Boxster','black','style1', 'Porsche', 'https://files.porsche.com/filestore/image/multimedia/none/982-718-c7-modelimage-sideshot/thumbwhite/230138a1-e874-11ea-80cd-005056bbdc38;sK;twebp/porsche-thumbwhite.webp', '4.7', '275', '220', '380', '8.1', '180'),
 ('2', 600, 1001, 3620000000, 2, '718 Cayman', 'black','style1','Porsche', 'https://files.porsche.com/filestore/image/multimedia/none/982-718-c7-se-modelimage-sideshot/thumbwhite/7bdc3629-4ea4-11ed-80f7-005056bbdc38;sK;twebp/porsche-thumbwhite.webp', '4.9', '275', '220', '380', '8.0', '181'),
 ('3', 700, 1010, 1400000000, 1, 'Audi S4','black','style1', 'Audi', 'https://images.autofun.vn/file1/new3fbb5e0370244ef28af19016af6ffdba_606x402.jpg', '4', '200', '200', '400', '8', '180');

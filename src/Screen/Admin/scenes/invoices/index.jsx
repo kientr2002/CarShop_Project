@@ -1,5 +1,12 @@
 import React, { useState, useEffect }  from "react";
-import { Box, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Typography,
+  useTheme,
+  ToggleButtonGroup,
+  ToggleButton,
+  Slider,
+} from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataInvoices } from "../../../../component/Admin/data/mockData";
@@ -12,29 +19,71 @@ const Invoices = () => {
       .then(response => setInvoices(response.data))
       .catch(error => console.log(error));
   }, []);
+  
+  const handleInputChange = (e, id, field) => {
+    console.log(e.target.value);
+    const newData = invoices.map((row) => {
+      if (row.id === id) {
+        return { ...row, [field]: e.target.value };
+      }
+      return row;
+    });
+    setInvoices(newData);
+  };
+
+  const handleInputDelete = (id) => {
+    // Tạo một bản sao mới của dữ liệu tài khoản (invoices) và loại bỏ phần tử có id trùng khớp
+    const updatedData = invoices.filter((row) => row.id !== id);
+  
+    // Cập nhật state với dữ liệu mới sau khi xóa
+    setInvoices(updatedData);
+  };
+
+  // const colors = tokens(theme.palette.mode);
+
+
+  const handleFocus = (e) => {
+    e.target.style.backgroundColor = colors.primary[300];
+  };
+  const handleBlur = (e) => {
+    e.target.style.backgroundColor = colors.primary[400];
+  };
+
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const inputStyle = {
+    borderRadius: "4px",
+    padding: "8px 12px",
+    border: "none",
+    backgroundColor: colors.primary[400],
+    color: colors.grey[100],
+    transition: "background-color 0.3s",
+    outline: "none",
+  };
   const columns = [
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Owner",
       flex: 1,
       cellClassName: "name-column--cell",
     },
-    { field: "id", headerName: "ID" },
+    { field: "id", 
+      headerName: "Customer ID",
+      flex: 1,
+    },
     {
       field: "car_id",
-      headerName: "car ID",
+      headerName: "Car ID",
       flex: 1,
     },    
     {
       field: "car_name",
-      headerName: "Car name",
+      headerName: "Car Name",
       flex: 1,
     },
     {
       field: "date_time",
-      headerName: "time",
+      headerName: "Time",
       flex: 1,
     },
     {

@@ -16,10 +16,12 @@ if ($conn->connect_error) {
 }
 
 // lấy dữ liệu từ bảng thương hiệu
-$sql = "SELECT account.name, buy_history.customer_id, buy_history.car_id, car.name as car_name, buy_history.date_time, car.price
+//as car_name, buy_history.date_time, car.price
+$sql = "SELECT  account.name, buy_history.customer_id as id, buy_history.car_id, car.name as car_name, buy_history.date_time, car.price
 FROM account
-INNER JOIN customer ON account.id = customer.customer_id 
-INNER JOIN buy_history ON customer.customer_id = buy_history.customer_id
+-- INNER JOIN customer ON account.id = customer.customer_id 
+-- INNER JOIN buy_history ON customer.customer_id = buy_history.customer_id
+INNER JOIN buy_history ON account.id = buy_history.customer_id
 INNER JOIN car ON car.car_id = buy_history.car_id;
 ";
 $result = $conn->query($sql);
