@@ -9,7 +9,6 @@ export default function Header(){
         <div className="Header">
         <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
-            <a href="#" className="navbar-brand" ><img src="https://upload.wikimedia.org/wikipedia/vi/thumb/d/df/Lamborghini_Logo.svg/1200px-Lamborghini_Logo.svg.png" alt="" width="70" height="70"/></a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span className="navbar-toggler-icon"></span>
             </button>
