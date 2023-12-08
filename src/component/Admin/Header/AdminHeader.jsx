@@ -13,7 +13,7 @@ function handleOut(event){
 export default function AdminHeader(){
     const notificationCount = 3;
     return(
-        <div className="Header">
+        <div className="Header-Admin">
             <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container-fluid">
                     {/* <a class="navbar-brand">Navbar</a> */}

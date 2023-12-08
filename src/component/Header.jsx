@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "./Style-header.css";
 export default function Header(){
     return(
-        <div className="Header">
+        <div className="Header-user">
         <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
