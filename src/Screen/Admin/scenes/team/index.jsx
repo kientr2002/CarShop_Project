@@ -18,14 +18,95 @@ import Header from "../../../../component/Admin/components/Header";
 import axios from "axios";
 
 const Team = () => {
-  const [account, setAccount] = useState([]);
+    //=========================================================================================================
+    const apiUrl = 'http://localhost/CarShop_Project/BE/Controller/Account_Controller.php';
 
+    // Function to update an account
+    const updateAccount = async (id, name, email, phoneNumber, password) => {
+      try {
+        const response = await fetch(apiUrl, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: id,
+            name: name,
+            email: email,
+            phone_number: phoneNumber,
+            password: password,
+          }),
+        });
+    
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Account updated successfully:', data);
+        } else {
+          console.error('Failed to update account.');
+        }
+      } catch (error) {
+        console.error('Error updating account:', error);
+      }
+    };
+    
+    // Function to delete an account
+    const deleteAccount = async (id) => {
+      try {
+        const response = await fetch(apiUrl, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: id,
+          }),
+        });
+    
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Account deleted successfully:', data);
+        } else {
+          console.error('Failed to delete account.');
+        }
+      } catch (error) {
+        console.error('Error deleting account:', error);
+      }
+    };
+    
+    // // Call the functions
+    // updateAccount(1, 'New Name', 'newemail@example.com', '123456789', 'newpassword');
+    // deleteAccount(1); // Change the ID accordingly
+    
+      //=========================================================================================================
+  const [account, setAccount] = useState([]);
+  //=========================================================================================================
+  // Function to fetch account data from the API
+  // const fetchAccountData = async () => {
+  //   try {
+  //     const response = await fetch(apiUrl);
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       setAccount(data); // Update account state with fetched data
+  //     } else {
+  //       console.error('Failed to fetch account data');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error fetching account data:', error);
+  //   }
+  // };
+
+  // // Call the fetchAccountData function when the component mounts
+  // useEffect(() => {
+  //   fetchAccountData();
+  // }, []); 
+  
   useEffect(() => {
     axios
       .get("http://localhost/CarShop_Project/BE/Model/Account-data.php")
       .then((response) => setAccount(response.data))
       .catch((error) => console.log(error));
   }, []);
+  //=========================================================================================================
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 

@@ -21,6 +21,8 @@ $stmt->execute();
 // Fetch data as associative array
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+// echo "Connect successfully";
+// echo "\n";
 // Output data as JSON
 header('Content-Type: application/json');
 echo json_encode($data);

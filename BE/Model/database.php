@@ -20,8 +20,6 @@ class Database{
     function __destruct()
     {
         ($this->connect)->close();
-        
-    
     }
 
     function execute($sql){

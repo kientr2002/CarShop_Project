@@ -7,6 +7,7 @@ import Invoices from "./scenes/invoices";
 import Contacts from "./scenes/contacts";
 import FormAccount from "./scenes/form/index";
 import Comments from "./scenes/faq";
+import Form from "./scenes/form";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Product from "./scenes/products";
@@ -36,6 +37,7 @@ function Admin() {
                 <Route path="/formaccount" element={<FormAccount />} />
                 <Route path="/comments" element={<Comments />} />
                 <Route path="/product" element={<Product />} />
+                <Route path="/form" element={<Form />} />
               </Routes>
             </main>
           </div>

@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 }
 
 // lấy dữ liệu từ bảng thương hiệu
-$sql = "SELECT account.name, cart.id, cart.customer_id, cart.car_id, cart.price, cart.quantity, cart.name AS car_name, cart.brand, cart.img, cart.acceleration, cart.max_speed, cart.wattage, cart.torque, cart.fuel_comsumption, cart.emissions_co2
+$sql = "SELECT account.name, cart.id, cart.customer_id, cart.car_id, cart.price, cart.quantity, cart.name AS car_name, cart.brand, cart.img, cart.acceleration, cart.max_speed, cart.wattage, cart.torque, cart.fuel_consumption, cart.emissions_co2
 FROM account
 INNER JOIN customer ON account.id = customer.customer_id 
 INNER JOIN cart ON customer.customer_id = cart.customer_id
