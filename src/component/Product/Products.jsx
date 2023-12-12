@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import "./Products.css";
-
+import { BiMessageRounded, BiBell, BiCog, BiMenu } from "react-icons/bi";
 export default function Products(props) {
   const [products, setProducts] = useState([]);
   const [brandInfo, setBrandInfo] = useState([]);

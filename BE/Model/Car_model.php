@@ -12,14 +12,14 @@ class Car{
     public $maxSpeed;
     public $wattage;
     public $torque;
-    public $fuelComsumption;
+    public $fuelConsumption;
     public $emissionCO2;
 
 
 
     public $database;
 
-    function __construct( $id="",$name="", $quantaty="", $acceleration="", $maxSpeed="", $wattage="", $torque="", $fuelComsumption="", $emissionCO2="")
+    function __construct( $id="",$name="", $quantaty="", $acceleration="", $maxSpeed="", $wattage="", $torque="", $fuelConsumption="", $emissionCO2="")
     {
         $this->id = $id;
         $this->name = $name;
@@ -28,7 +28,7 @@ class Car{
         $this->maxSpeed = $maxSpeed;
         $this->wattage = $wattage;
         $this->torque = $torque;
-        $this->fuelComsumption = $fuelComsumption;
+        $this->fuelConsumption = $fuelConsumption;
         $this->emissionCO2 = $emissionCO2;
         $this->database = new Database("localhost","root","","shop");
         
@@ -78,7 +78,7 @@ class Car{
 
     function get_specification(){
         $data_response = array();
-        $name = $acceleration = $maxSpeed = $wattage = $torque = $fuelComsumption = $emissionCO2 = "";
+        $name = $acceleration = $maxSpeed = $wattage = $torque = $fuelConsumption = $emissionCO2 = "";
         $sql = "SELECT * FROM car WHERE car_id='$this->id'";
         
 
@@ -89,7 +89,7 @@ class Car{
                 $maxSpeed = $row["max_speed"];
                 $wattage = $row["wattage"];
                 $torque = $row["torque"];
-                $fuelComsumption = $row["fuel_comsumption"];
+                $fuelConsumption = $row["fuel_consumption"];
                 $emissionCO2 = $row["emissions_co2"];
                 $price = $row["price"];
                 $name = $row["name"];
@@ -99,7 +99,7 @@ class Car{
         $data_response[] = array("name" => "Mô men xoắn cực đại(Nm)", "value" => $torque);
         $data_response[] = array("name" => "Tăng tốc từ 0 - 100 km/giờ(giây)", "value" => $acceleration);
         $data_response[] = array("name" => "Tốc độ tối đa(km/h)", "value" => $maxSpeed);
-        $data_response[] = array("name" => "Tiêu thụ nhiên liệu kết hợp (lít/100km)", "value" => $fuelComsumption);
+        $data_response[] = array("name" => "Tiêu thụ nhiên liệu kết hợp (lít/100km)", "value" => $fuelConsumption);
         $data_response[] = array("name" => "Lượng khí thải CO2 (g/km)", "value" => $emissionCO2);
         $data_response[] = array("name" => "Giá", "value" => $price);
         $data_response = array("specification" => $data_response,"name" => $name);
@@ -184,19 +184,10 @@ class Comment{
         
         $sql = "SELECT * FROM write_comment_rate WHERE customer_id='$this->customer_id' AND car_id='$this->car_id'";
         $result = ($this->database)->execute($sql);
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                $this->id = $row["comment_id"];
-                $sql = "UPDATE comment_rate SET content='$this->content',rate='$this->rating' WHERE comment_id='$this->id'";
-                $data_response = (($this->database)->execute($sql))?"update success":"update fault";
-            }
-        }
-        else{
-                $sql = "INSERT INTO comment_rate(content,rate) VALUES ('$this->content','$this->rating')";
-                $data_response = (($this->database)->execute($sql))?"post success":"post fault";
-                $sql = "INSERT INTO write_comment_rate(customer_id,car_id,comment_id,date_time) VALUES ('$this->customer_id','$this->car_id',LAST_INSERT_ID(), NOW())";
-                $data_response = (($this->database)->execute($sql))?"post success":"post fault";
-        }
+        $sql = "INSERT INTO comment_rate(content,rate) VALUES ('$this->content','$this->rating')";
+        $data_response = (($this->database)->execute($sql))?"post success":"post fault";
+        $sql = "INSERT INTO write_comment_rate(customer_id,car_id,comment_id,date_time) VALUES ('$this->customer_id','$this->car_id',LAST_INSERT_ID(), NOW())";
+        $data_response = (($this->database)->execute($sql))?"post success":"post fault";
         $data_response = array("message" => $data_response);
         return json_encode($data_response);
     }

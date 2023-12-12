@@ -1,0 +1,37 @@
+.white-text {
+  color: #fff; /* hoặc màu trắng khác tùy ý */
+}
+
+.title-container, .img-container, .author-container{
+  display: flex;
+  align-items:  center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.img-child-container{
+  width: 100%;
+}
+.feed-container{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 100vw;
+  display: flex;
+  align-items:  center;
+  justify-content: center;
+
+}
+.feed-body-container{
+  width: 60vw;
+}
+h1{
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 50px;
+
+}
+
+p{
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 20px; 
+}
