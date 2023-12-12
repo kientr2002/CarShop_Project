@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import AboutUs from '../../component/AboutUs/AboutUs';
 
-function AboutUs() {
-  return (
-    <div>AboutUs</div>
-  )
+export class Info extends Component {
+  static propTypes = {
+
+  }
+
+  render() {
+    return (    
+    <div className="Body">
+      <div className="row">
+        <AboutUs/>
+        </div>
+        </div>
+
+        
+    )
+  }
 }
 
-export default AboutUs
+export default Info

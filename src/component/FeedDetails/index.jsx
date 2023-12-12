@@ -20,9 +20,6 @@ export class FeedDetail extends Component {
           <h1 className="white-text title-container">
             <strong>Facilis consequatur eligendi</strong>
           </h1>
-          <h4 className="white-text author-container">
-            Sơn béo
-          </h4>
           <div  className='img-container'>
             <img
             src="https://i.pinimg.com/originals/e0/b6/19/e0b619bb4def29cc007fba6c9b74cf99.jpg"
