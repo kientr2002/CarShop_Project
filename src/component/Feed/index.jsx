@@ -1,4 +1,6 @@
-import React from "react";
+import {React, useCallback} from "react";
+import { Col, Row, Container, Button, ToggleButton, Form ,InputGroup, Carousel} from "react-bootstrap";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   MDBBtn,
   MDBCol,
@@ -8,29 +10,21 @@ import {
 } from "mdb-react-ui-kit";
 import "./style.css";
 export default function Feed() {
+  const navigate = useNavigate();
+  const handleButtonClicked = useCallback(() => {
+    navigate('/newdetail');
+  }, []);
   return (
     <div>
       {/* Feed 1 */}
       <MDBContainer className="py-5">
         <MDBRow className="gx-5">
           <MDBCol md="6" className="mb-4">
-            <MDBRipple
-              className="bg-image hover-overlay ripple shadow-2-strong rounded-5"
-              rippleTag="div"
-              rippleColor="light"
-            >
               <img
-                src="https://mdbcdn.b-cdn.net/img/new/slides/080.webp"
+                src="https://i.pinimg.com/originals/e0/b6/19/e0b619bb4def29cc007fba6c9b74cf99.jpg"
                 className="w-100"
                 alt="Feed 1"
               />
-              <a href="#!">
-                <div
-                  className="mask"
-                  style={{ backgroundColor: "rgba(251, 251, 251, 0)" }}
-                ></div>
-              </a>
-            </MDBRipple>
           </MDBCol>
           <MDBCol md="6" className="mb-4">
             <span className="badge bg-danger px-2 py-1 shadow-1-strong mb-3">
@@ -45,7 +39,9 @@ export default function Feed() {
               veritatis placeat unde animi laborum sapiente illo possimus,
               commodi dignissimos obcaecati illum maiores corporis.
             </p>
-            <MDBBtn>Read More</MDBBtn>
+            <Button style={{width:100,height:50}} type="submit" className="col-md-2 m-2" variant="primary" onClick={handleButtonClicked}>
+              Read More
+            </Button>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
@@ -54,23 +50,11 @@ export default function Feed() {
       <MDBContainer className="py-5">
         <MDBRow className="gx-5">
           <MDBCol md="6" className="mb-4">
-            <MDBRipple
-              className="bg-image hover-overlay ripple shadow-2-strong rounded-5"
-              rippleTag="div"
-              rippleColor="light"
-            >
               <img
-                src="https://mdbcdn.b-cdn.net/img/new/slides/080.webp"
+                src="https://i.pinimg.com/originals/e0/b6/19/e0b619bb4def29cc007fba6c9b74cf99.jpg"
                 className="w-100"
                 alt="Feed 2"
               />
-              <a href="#!">
-                <div
-                  className="mask"
-                  style={{ backgroundColor: "rgba(251, 251, 251, 0)" }}
-                ></div>
-              </a>
-            </MDBRipple>
           </MDBCol>
           <MDBCol md="6" className="mb-4">
             <span className="badge bg-danger px-2 py-1 shadow-1-strong mb-3">
@@ -85,7 +69,9 @@ export default function Feed() {
               veritatis placeat unde animi laborum sapiente illo possimus,
               commodi dignissimos obcaecati illum maiores corporis.
             </p>
-            <MDBBtn>Read More</MDBBtn>
+            <Button style={{width:100,height:50}} type="submit" className="col-md-2 m-2" variant="primary">
+              Read More
+            </Button>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
