@@ -13,6 +13,7 @@ import Payment from '../../component/Product/Payment';
 import FormForgotPassword from '../Authentication/Form/ForgotPassword';
 import FormRegister from '../Authentication/Form/Register';
 import News from './News';
+import AboutUs from './AboutUs';
 
 import NewDetail from './NewDetail';
 function User(props) {
@@ -42,6 +43,7 @@ function User(props) {
           <Route exact path="/products/payment" element={<Payment/>} />
         <Route exact path="/news" element={<News />} />
           <Route exact path="/newdetail" element={<NewDetail />} />
+        <Route exact path="/aboutus" element={<AboutUs />} />
         <Route exact path="/cart" element={<Cart userID = {isLogin} />} />
 
         <Route exact path="/login" element={loginComponent} />

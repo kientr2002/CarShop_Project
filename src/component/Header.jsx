@@ -24,7 +24,7 @@ export default function Header(){
                     <Link to="/products" className="nav-link" id="Title">Sản phẩm</Link>
                     </li>
                     <li className="nav-item active">
-                        <a href="#" className="nav-link" id="Title">Thông tin</a> 
+                        <a href="/aboutus" className="nav-link" id="Title">Thông tin</a> 
                     </li>
                 </ul>
                 <div  className="d-flex me-2 " id="header-icon">
