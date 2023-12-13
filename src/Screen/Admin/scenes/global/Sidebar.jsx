@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { Link } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
@@ -17,6 +19,15 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import GarageIcon from '@mui/icons-material/Garage';
+
+
+
+function handleOut(event){
+  localStorage.removeItem('whoLogin');
+  localStorage.removeItem('userId');
+  // console.log(localStorage.getItem('userId'));
+  window.location.reload();
+}
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -133,7 +144,30 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-                    
+            <Item
+              title="Thêm Admin"
+              to="/form"
+              icon={<AddCircleIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            {/* <Item
+              title="Đăng Xuất"
+              to="/login"
+              onClick={handleOut}
+              // icon={
+              //   <button className="btn btn-outline-success" type="submit" onClick={handleOut}>
+              //     <Link to="/login" className="btn" type="button">
+              //       <ExitToAppIcon />
+              //     </Link>
+              //   </button>
+              // }
+              
+              icon={ <Link to="/login" className="btn" type="button"><ExitToAppIcon /></Link> }
+              selected={selected}
+              setSelected={setSelected}
+            />
+                     */}
           </Box>
         </Menu>
       </ProSidebar>

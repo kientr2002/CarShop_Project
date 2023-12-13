@@ -17,12 +17,11 @@ import AdminHeader from './../../component/Admin/Header/AdminHeader';
 function Admin() {
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
-
   return (
       <div className="home">
-        {/* <div>
+        <div>
           <AdminHeader/>
-        </div> */}
+        </div>
         <div>
           <ThemeProvider theme={theme}>
           <CssBaseline /> 
