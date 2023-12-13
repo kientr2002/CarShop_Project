@@ -27,7 +27,7 @@ export class FeedDetail extends Component {
             alt="Feed 2"
           />
           </div>
-          <p className="white-text">
+          <p className="white-text ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
             consequatur eligendi quisquam doloremque vero ex debitis
             veritatis placeat unde animi laborum sapiente illo possimus,

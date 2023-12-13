@@ -3,7 +3,7 @@
 
 // // Lấy phần đường dẫn sau domain
 // $request_uri = $_SERVER['REQUEST_URI'];
-// echo $request_uri;
+// // echo $request_uri;
 // // Tạo một danh sách các route và controller tương ứng
 // // $temp = "/CarShop_Project/BE/index.php/";
 // $routes = [
@@ -13,6 +13,11 @@
 //     '/CarShop_Project/BE/Controller/index.php/account/delete' => 'AccountController@deleteAccount',
 //     '/product/create' => 'ProductController@createProduct',
 //     // Thêm các route khác ở đây...
+//     //news
+//     '/CarShop_Project/BE/Controller/index.php/news/get' => 'NewsController@getNews',
+//     '/CarShop_Project/BE/Controller/index.php/news/update' => 'NewsController@updateNews',
+//     '/CarShop_Project/BE/Controller/index.php/news/delete' => 'NewsController@deleteNews',
+//     '/CarShop_Project/BE/Controller/index.php/news/insert' => 'NewsController@insertNews',
 // ];
 
 // // Kiểm tra xem route có tồn tại trong danh sách không
