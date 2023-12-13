@@ -10,6 +10,7 @@ import {
   MDBRow,
 } from "mdb-react-ui-kit";
 import "./style.css";
+
 export default function Feed() {
   const navigate = useNavigate();
   const [news, setNews] = useState([]);
