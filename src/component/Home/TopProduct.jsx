@@ -34,8 +34,7 @@ export default function TopProduct(props){
                         </div>
                     ))}
                 </div>
-            </div>
-            <div>aaaaaaaaaaaaa</div>       
+            </div>      
        </div>
     )
 }
