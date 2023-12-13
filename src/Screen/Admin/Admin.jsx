@@ -20,9 +20,9 @@ function Admin() {
 
   return (
       <div className="home">
-        <div>
+        {/* <div>
           <AdminHeader/>
-        </div>
+        </div> */}
         <div>
           <ThemeProvider theme={theme}>
           <CssBaseline /> 
