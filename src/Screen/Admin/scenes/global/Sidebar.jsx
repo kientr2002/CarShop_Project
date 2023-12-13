@@ -151,23 +151,6 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            {/* <Item
-              title="Đăng Xuất"
-              to="/login"
-              onClick={handleOut}
-              // icon={
-              //   <button className="btn btn-outline-success" type="submit" onClick={handleOut}>
-              //     <Link to="/login" className="btn" type="button">
-              //       <ExitToAppIcon />
-              //     </Link>
-              //   </button>
-              // }
-              
-              icon={ <Link to="/login" className="btn" type="button"><ExitToAppIcon /></Link> }
-              selected={selected}
-              setSelected={setSelected}
-            />
-                     */}
           </Box>
         </Menu>
       </ProSidebar>

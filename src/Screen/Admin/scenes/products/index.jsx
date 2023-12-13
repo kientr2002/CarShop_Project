@@ -166,7 +166,13 @@ const handleKeyPress = (e, row) => {
                 onChange={(e) => handleImageUrlChange(e, row)}
                 onBlur={handleBlurImage}
                 onKeyDown={(e) => handleKeyPress(e, row)}
-                style={{ width: '100%' }}
+                style={{
+                  width: '100%',
+                  padding: '8px',
+                  border: '1px solid #ccc',
+                  borderRadius: '4px',
+                  fontSize: '14px',
+                }}
               />
             ) : (
               <img
@@ -293,11 +299,6 @@ const handleKeyPress = (e, row) => {
       headerName: "Actions",
       flex: 1.5,
       renderCell: ({ row }) => {
-        // const handleUpdate = () => {
-        //   // Xử lý logic khi nhấn nút "Update"
-        //   console.log("Update row with ID:", row.id);
-        //   // Thêm logic cập nhật dữ liệu vào database tại đây
-        // };
         const handleUpdate = async () => {
           try {
             console.log(row.password);

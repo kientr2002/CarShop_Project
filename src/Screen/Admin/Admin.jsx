@@ -35,7 +35,7 @@ function Admin() {
                 <Route path="/invoices" element={<Invoices />} />
                 <Route path="/formaccount" element={<FormAccount />} />
                 <Route path="/comments" element={<Comments />} />
-                <Route path="/product" element={<Product />} />
+                <Route path="/product" element={<Product />} /> 
                 <Route path="/form" element={<Form />} />
               </Routes>
             </main>
