@@ -13,11 +13,8 @@ export default function ViewProduct() {
   return (
     <div className="Body">
      <div className="row">
-      <div className="col-md-3">
-        <Sidebar onBrandClick={handleBrandClick} />
-      </div>
-      <div className="col-md-9">
-        <Products selectedBrand={selectedBrand} />
+      <div>
+        <Products />
       </div>
     </div>
     </div> 

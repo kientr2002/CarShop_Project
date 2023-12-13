@@ -152,8 +152,8 @@ CREATE TABLE `car` (
 INSERT INTO `car` (`car_id`, `price`, `quantity`, `name`, `brand`, `img`, `acceleration`, `max_speed`, `wattage`, `torque`, `fuel_consumption`, `emissions_co2`) VALUES
 (1000, 3740000000, 3, '718 Boxster', 'Porsche', 'https://files.porsche.com/filestore/image/multimedia/none/982-718-c7-modelimage-sideshot/thumbwhite/230138a1-e874-11ea-80cd-005056bbdc38;sK;twebp/porsche-thumbwhite.webp', '4.7', '275', '220', '380', '8.1', '180'),
 (1001, 3620000000, 2, '718 Cayman', 'Porsche', 'https://files.porsche.com/filestore/image/multimedia/none/982-718-c7-se-modelimage-sideshot/thumbwhite/7bdc3629-4ea4-11ed-80f7-005056bbdc38;sK;twebp/porsche-thumbwhite.webp', '4.9', '275', '220', '380', '8.0', '181'),
-(1002, 7130000000, 3, '911 Carrera', '', '', '4.2', '293', '283', '450', '8.5', '190'),
-(1003, 8500000000, 1, '911 Targa 4', '', '', '4.4', '289', '282', '450', '8.4', '189'),
+(1002, 7130000000, 3, '911 Carrera', 'Porche', 'http://localhost/CarShop_Project/BE/uploads/911 Carrera/black_style1_beside.jpg', '4.2', '293', '283', '450', '8.5', '190'),
+(1003, 8500000000, 1, '911 Targa 4', 'Porche', 'http://localhost/CarShop_Project/BE/uploads/911 Targa 4/red_style1_beside.jpg', '4.4', '289', '282', '450', '8.4', '189'),
 (1010, 1400000000, 1, 'Audi S4', 'Audi', 'https://images.autofun.vn/file1/new3fbb5e0370244ef28af19016af6ffdba_606x402.jpg', '4', '200', '200', '400', '8', '180'),
 (1011, 2000000000, 1, 'Audi Q2', 'Audi', 'https://images.autofun.vn/file1/new0bf22eb2727a43f49febc56486962b92_606x402.jpg', '4', '200', '200', '400', '8', '180'),
 (1012, 1460000000, 1, 'Audi A4', 'Audi', 'https://images.autofun.vn/file1/newcaeb3ce6d5964922b8093f3669c437fc_606x402.jpg', NULL, NULL, NULL, NULL, NULL, NULL),

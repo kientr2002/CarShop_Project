@@ -18,6 +18,9 @@
 //     '/CarShop_Project/BE/Controller/index.php/news/update' => 'NewsController@updateNews',
 //     '/CarShop_Project/BE/Controller/index.php/news/delete' => 'NewsController@deleteNews',
 //     '/CarShop_Project/BE/Controller/index.php/news/insert' => 'NewsController@insertNews',
+//     //car or product
+//     '/CarShop_Project/BE/Controller/index.php/product/delete' => 'ProductController@deleteProduct',
+    
 // ];
 
 // // Kiểm tra xem route có tồn tại trong danh sách không

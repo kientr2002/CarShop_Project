@@ -26,7 +26,7 @@ export default function CommentRating(props) {
 
     const send_comment = async (sending_data ) =>{
       try {
-        const response = await axios.post("http://localhost/CarShop_Project/BE/Controller/Car_controller.php", sending_data, {headers:{
+        const response = await axios.post("http://localhost/CarShop_Project/BE/Controller/CarController.php", sending_data, {headers:{
           "Content-Type": "application/x-www-form-urlencoded" // Đặt Content-Type cho phù hợp với dữ liệu gửi đi
         }});
         // console.log(response.data);

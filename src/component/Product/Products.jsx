@@ -14,33 +14,13 @@ export default function Products(props) {
       .catch((error) => console.log(error));
   }, []);
 
-  const filteredProducts = props.selectedBrand
-    ? products.filter((product) => product.brand === props.selectedBrand)
-    : products;
 
-    useEffect(() => {   
-        axios
-          .get("http://localhost/CarShop_Project/BE/Model/Brand-data.php")
-          .then((response) => {
-            const filteredBrands = response.data.filter(brand => brand.name === props.selectedBrand);
-            if (filteredBrands.length > 0) {
-              setBrandInfo(filteredBrands[0]);
-            }
-            // console.log(filteredBrands)
-          })
-          .catch((error) => console.log(error));
-      }, [props.selectedBrand]);
 
   return (
     <>
-        <Introduce
-          imgSrc={brandInfo.logo}
-          imgName={brandInfo.name}
-          info={brandInfo.info}
-        />
       <div style={{ margin: '30px 10px' }}>
         <div className="row">
-          {filteredProducts.map((product) => (
+          {products.map((product) => (
             <div className="col-md-4">
               <Link to={`/products/product/${product['car_id']}`} style={{ textDecoration: 'none', color: 'black' }}>
                 <CardProduct
@@ -79,14 +59,3 @@ function CardProduct(props) {
   );
 }
   
-  function Introduce(props) {
-    return (
-      <div className="introduce">
-        <div>
-          <h2 className="namelogo">{props.imgName}</h2>
-          <img className="logoproduct" src={props.imgSrc} alt="logo" />
-        </div>
-        <p>{props.info}</p>
-      </div>
-    );
-  }
