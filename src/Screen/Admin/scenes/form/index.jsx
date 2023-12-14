@@ -3,6 +3,7 @@ import { Box, Button, TextField } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../../../component/Admin/components/Header";
 import axios from 'axios';
+
 const Form = () => {
   const [account, setAccount] = useState([]);
   const [Warning, setWarning] = useState([]);
@@ -23,6 +24,11 @@ const Form = () => {
     const phone = document.getElementsByName("user_phonenumber")[0].value;
     const question = document.getElementsByName("user_question")[0].value;
     const answer = document.getElementsByName("user_answer")[0].value;
+
+    // console.log(name + "\n" + email + "\n" + password + "\n" + confirmPassword + "\n" + birth + "\n" + address + "\n" + phone + "\n" + question + "\n" + answer);
+    // handleRegister(800, name, email, password, birth, address, phone, question, answer);
+    // handleRegister(800, row.name, row.email, row.password, row.birth, row.address, row.phone, row.question, row.answer);
+    
     verifyAccount(name, email, password, confirmPassword, birth, address, phone,question, answer);
   };
   const verifyAccount = (name,email, password, confirmPassword, birth, address, phone,question,answer) => {
@@ -61,8 +67,8 @@ const Form = () => {
       setWarning("");
       verifyEmail(name, email, password, confirmPassword, birth, address, phone, question, answer);
     }
-   
   };
+
   const verifyEmail = (name, email, password, confirmPassword, birth, address, phone, question, answer) => {
     let id = 0;
     for (let i = 0; i < account.length; i++) {
@@ -77,22 +83,149 @@ const Form = () => {
       }
     }
     id += 1;
-    uploadDatabase(id,name, email, password, birth, address, phone, question, answer);
-    setWarning("");
+    // uploadDatabase(id, name, email, password, birth, address, phone, question, answer);
+
+    handleRegister(id, name, email, password, birth, address, phone, question, answer);
+    console.log("Verified Email");
+    // setWarning("");
   };
-  const uploadDatabase = (id ,name, email, password, birth, address, phone, question, answer) => {
-      if(question == '1'){
-        question="Sở thích của bạn là gì";
-      } else if(question == '2'){
-        question="Bạn sống ở đâu";
-      } else if(question == '3'){
-        question = "Biệt danh của bạn là gì";
-      } else if (question == '4'){
-        question = "Bạn đang làm nghề gì"
-      } else {
-        //
+  const handleRegister = (id, name, email, password, birth, address, phone, question, answer) => {
+    const url = 'http://localhost/CarShop_Project/BE/Model/registerAdmin-data.php';
+  
+    const userData = {
+      user_id: id,
+      user_name: name,
+      user_email: email,
+      user_password: password,
+      user_birthday: birth,
+      user_address: address,
+      user_phonenumber: phone,
+      user_question: question,
+      user_answer: answer
+    };
+  
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userData)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-    const data = { // Tạo một object chứa thông tin của tài khoản
+      return response.json();
+    })
+    .then(data => {
+      console.log('Registration successful!', data);
+      // Gửi thông báo hoặc thực hiện các xử lý sau khi đăng ký thành công
+    })
+    .catch(error => {
+      console.error('Registration error:', error);
+      // Xử lý lỗi nếu có
+    });
+  };
+  
+  // const handleRegister = (id, name, email, password, birth, address, phone, question, answer) => {
+  //   axios.post('http://localhost/CarShop_Project/BE/Model/registerAdmin-data.php', {
+  //     user_id: id,
+  //     user_name: name,
+  //     user_email: email,
+  //     user_password: password,
+  //     user_birthday: birth,
+  //     user_address: address,
+  //     user_phonenumber: phone,
+  //     user_question: question,
+  //     user_answer: answer
+  //   })
+  //   .then(response => {
+  //     console.log('Registration successful!', response.data);
+  //     // Gửi thông báo hoặc thực hiện các xử lý sau khi đăng ký thành công
+  //   })
+  //   .catch(error => {
+  //     console.error('Registration error:', error);
+  //     // Xử lý lỗi nếu có
+  //   });
+  // };
+  
+  
+
+  // const handleRegister = async (id ,name, email, password, birth, address, phone, question, answer) => {
+  //   try {
+  //     console.log("handleRegister");
+  //     if(question == '1'){
+  //       question="Sở thích của bạn là gì";
+  //     } else if(question == '2'){
+  //       question="Bạn sống ở đâu";
+  //     } else if(question == '3'){
+  //       question = "Biệt danh của bạn là gì";
+  //     } else if (question == '4'){
+  //       question = "Bạn đang làm nghề gì"
+  //     } else {
+  //       //
+  //     }
+  //     // console.log(id +"\n" + name + "\n" + email + "\n" + password + "\n" + birth + "\n" + address + "\n" + phone + "\n" + question + "\n" + answer+ "\n" + "==" + "\n");
+
+  //     const response = await fetch('http://localhost/CarShop_Project/BE/Model/registerAdmin-data.php', {
+  //       method: 'POST', // Phương thức POST để gửi dữ liệu
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         user_id: id,
+  //         user_name: name,
+  //         user_email: email,
+  //         user_password: password,
+  //         user_birthday: birth,
+  //         user_address: address,
+  //         user_phonenumber: phone,
+  //         user_question: question,
+  //         user_answer: answer,
+  //       }), // Chuyển đổi dữ liệu sang chuỗi JSON
+  //     });
+
+  //     if (response.ok) {
+  //       navigation();
+  //       console.log('Registration successful!');
+  //       // Xử lý nếu đăng ký thành công
+  //     } else {
+  //       console.error('Registration failed');
+  //       // Xử lý nếu đăng ký không thành công
+  //     }
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //     // Xử lý nếu có lỗi khi gửi yêu cầu
+  //   }
+  // };
+
+  const uploadDatabase = (id ,name, email, password, birth, address, phone, question, answer) => { 
+    if(question == '1'){
+      question="Sở thích của bạn là gì";
+    } else if(question == '2'){
+      question="Bạn sống ở đâu";
+    } else if(question == '3'){
+      question = "Biệt danh của bạn là gì";
+    } else if (question == '4'){
+      question = "Bạn đang làm nghề gì"
+    } else {
+      //
+    }    
+    console.log(id +"\n" + name + "\n" + email + "\n" + password + "\n" + birth + "\n" + address + "\n" + phone + "\n" + question + "\n" + answer+ "\n" + "==" + "\n");
+    // const data = { // Tạo một object chứa thông tin của tài khoản
+    //   // user_id: id,
+    //   user_id: 800,
+    //   user_name: name,
+    //   user_email: email,
+    //   user_password: password,
+    //   user_birthday: birth,
+    //   user_address: address,
+    //   user_phonenumber: phone,
+    //   user_question: question,
+    //   user_answer: answer,
+    // };
+
+    axios.post("http://localhost/CarShop_Project/BE/Model/registerAdmin-data.php", {
       user_id: id,
       user_name: name,
       user_email: email,
@@ -102,18 +235,23 @@ const Form = () => {
       user_phonenumber: phone,
       user_question: question,
       user_answer: answer,
-    };
-    axios.post('http://localhost/CarShop_Project/BE/Model/registerAdmin-data.php', data)
-    .then(response => {
-      // Xử lý kết quả trả về nếu cần
-      alert("Khởi tạo thành công!");
-      navigation();
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
-    .catch(error => {
-      // Xử lý lỗi nếu có
-      alert(error);
-    });
-  }
+      .then(response => {
+        // Xử lý kết quả trả về khi request thành công
+        console.log('Registration successful!', response.data);
+        navigation();
+      })
+      .catch(error => {
+        // Xử lý lỗi khi request không thành công
+        console.log("Không thành công");
+        console.error('Registration failed', error);
+      });
+  };
+
   const navigation = () => {   
     window.location.href = "/contacts";
   }
@@ -208,7 +346,7 @@ const Form = () => {
               </div>
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
-              <Button type="submit" color="secondary" variant="contained" onClick={handleFormSubmit}>
+              <Button type="submit" color="secondary" variant="contained" onClick={handleFormSubmit}> 
                 Create New User
               </Button>
             </Box>
