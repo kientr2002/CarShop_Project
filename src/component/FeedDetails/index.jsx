@@ -21,31 +21,36 @@ export default function FeedDetail()  {
   }, []);
    useEffect(() => {
     axios
-      .post("http://localhost/CarShop_Project/BE/Controller/test.php/newsdetail/get", 1)
+      .get(`http://localhost/CarShop_Project/BE/Controller/test.php/news/get?newId=${newId}`)
       .then((response) => setNewsdetail(response.data))
       .catch((error) => console.log(error));
   }, []);
 
     return (
       <div className='feed-container'>
+        {newsdetail.map((item) => (
+          <div>item.title</div>
+        ))}
         <div className='feed-body-container'>
           <h1 className="white-text title-container">
+            {/* newsdetail.title */}
             <strong>Facilis consequatur eligendi</strong>
           </h1>
           <div  className='img-container'>
             <img
+            // newsdetail.image
             src="https://i.pinimg.com/originals/e0/b6/19/e0b619bb4def29cc007fba6c9b74cf99.jpg"
             className='img-child-container'
             alt="Feed 2"
           />
           </div>
           <p className="white-text ">
+            {/* newsdetail.content */}
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
             consequatur eligendi quisquam doloremque vero ex debitis
             veritatis placeat unde animi laborum sapiente illo possimus,
             commodi dignissimos obcaecati illum maiores corporis.
-          </p>
-          <button onClick={handleButtonClicked(newId)}>aaaaaaaa</button>          
+          </p>        
         </div>
       </div>
     )

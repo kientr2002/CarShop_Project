@@ -15,36 +15,16 @@ export default function Feed() {
   const navigate = useNavigate();
   const [news, setNews] = useState([]);
   const [newDetail, setNewDetail ] = useState([]);
-const handleButtonClicked = useCallback((newId) => {
-  // Hiển thị alert với new_id của mục tin tức
-
+  const handleButtonClicked = useCallback((newId) => {
+    navigate(`/newdetail/${newId}`)
   }, []);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const newId = 1; // Change this value based on your requirement
-        const response = await axios.get('http://localhost/CarShop_Project/BE/Controller/test.php/newsdetail/get', {
-          params: {
-            "new_id": newId,
-          },
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          // You can include other Axios configurations if needed
-        });
-
-        // Handle the response data
-        console.log(response.data);
-      } catch (error) {
-        // Handle errors
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, []); 
-
-
+  
+   useEffect(() => {
+    axios
+      .get("http://localhost/CarShop_Project/BE/Controller/test.php/news/get")
+      .then((response) => setNews(response.data))
+      .catch((error) => console.log(error));
+  }, []);
 
 
   return (

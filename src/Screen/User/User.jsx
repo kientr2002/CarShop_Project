@@ -42,7 +42,7 @@ function User(props) {
           <Route exact path="/products/product/:id" element={<Product isLogin={isLogin}/>} />
           <Route exact path="/products/payment" element={<Payment/>} />
         <Route exact path="/news" element={<News />} />
-          <Route exact path="/newdetail" element={<NewDetail />} />
+          <Route exact path='/newdetail/:newId' element={<NewDetail />} />
         <Route exact path="/aboutus" element={<AboutUs />} />
         <Route exact path="/cart" element={<Cart userID = {isLogin} />} />
 
