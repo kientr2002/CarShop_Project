@@ -23,10 +23,10 @@
             echo json_encode(["status" => "error", "data" => ["msg" => "Query failed: " . $e->getMessage()]]);
         }
     }
-    //GET NEWS DETAIL
-    function get_new_detail($new_id){
+    //GET NEWEST NEWS 
+    function get_newest_new(){
       try {
-          $query = "SELECT * FROM news WHERE new_id =" .$new_id. ";";
+          $query = "SELECT * FROM news ORDER BY date DESC;";
           $statement = $this->database->query($query);
           $result = $statement->fetchAll(PDO::FETCH_ASSOC);
           

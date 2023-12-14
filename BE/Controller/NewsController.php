@@ -28,14 +28,14 @@ class NewsController
             // echo "Không tìm thấy thông tin tin tức.";
         }
     }
-    public function getNewsDetail($data) {
+    public function getNewestNew() {
         if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
             http_response_code(405); // Method Not Allowed
             echo "Phương thức không được phép. Yêu cầu sử dụng phương thức GET.";
             return;
         }
-        $new_id = $data['new_id'];
-        $newsInfo = $this->newsModel->get_new_detail($new_id);
+
+        $newsInfo = $this->newsModel->get_newest_new();
         if ($newsInfo) {
             header('Content-Type: application/json');
             echo json_encode($newsInfo); // Trả về thông tin tin tức dưới dạng JSON

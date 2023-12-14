@@ -15,16 +15,16 @@ export default function Header(){
             <div className="collapse navbar-collapse" id="mynavbar">
                 <ul className="navbar-nav me-auto" >
                     <li className="nav-item">
-                    <Link to="/" className="nav-link" id="Title">Trang chủ</Link>
+                        <Link to="/" className="nav-link" id="Title">Trang chủ</Link>
                     </li> 
                     <li className="nav-item active">
-                        <a href="/news" className="nav-link" id="Title">Tin tức</a> 
+                        <Link to="/news" className="nav-link" id="Title">Tin tức</Link>
                     </li>
                     <li class="nav-item dropdown">
-                    <Link to="/products" className="nav-link" id="Title">Sản phẩm</Link>
+                        <Link to="/products" className="nav-link" id="Title">Sản phẩm</Link>
                     </li>
                     <li className="nav-item active">
-                        <a href="/aboutus" className="nav-link" id="Title">Thông tin</a> 
+                        <Link to="/aboutus" className="nav-link" id="Title">Thông tin</Link>
                     </li>
                 </ul>
                 <div  className="d-flex me-2 " id="header-icon">

@@ -16,6 +16,7 @@ import News from './News';
 import AboutUs from './AboutUs';
 
 import NewDetail from './NewDetail';
+import NewestFeed from '../../component/FeedNewest';
 function User(props) {
   const [isLogin, setIslogin] = useState('No');
   const handleLogin = (loginStatus) => {

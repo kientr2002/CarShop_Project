@@ -10,7 +10,7 @@ export default function FeedDetail() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost/CarShop_Project/BE/Controller/test.php/news/get`)
+      .get(`http://localhost/CarShop_Project/BE/Controller/index.php/news/get`)
       .then((response) => setNewsdetail(response.data))
       .catch((error) => console.log(error));
   }, []);

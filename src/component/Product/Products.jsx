@@ -9,7 +9,7 @@ export default function Products(props) {
 
   useEffect(() => {
     axios
-      .get("http://localhost/CarShop_Project/BE/Controller/test.php/product/cars/get")
+      .get("http://localhost/CarShop_Project/BE/Controller/index.php/product/cars/get")
       .then((response) => setProducts(response.data))
       .catch((error) => console.log(error));
   }, []);
