@@ -13,7 +13,17 @@ $routes = [
     '/CarShop_Project/BE/Controller/test.php/account/register' => 'AccountController@registerAccount',
     '/CarShop_Project/BE/Controller/test.php/account/delete' => 'AccountController@deleteAccount',
     '/product/create' => 'ProductController@createProduct',
-    // Thêm các route khác ở đây...
+    // News
+    '/CarShop_Project/BE/Controller/test.php/news/get' => 'NewsController@getNews',
+    '/CarShop_Project/BE/Controller/test.php/news/update' => 'NewsController@updateNews',
+    '/CarShop_Project/BE/Controller/test.php/news/delete' => 'NewsController@deleteNews',
+    '/CarShop_Project/BE/Controller/test.php/news/insert' => 'NewsController@insertNews',
+    //Product
+    '/CarShop_Project/BE/Controller/test.php/product/cars/get' => 'ProductController@getProduct',
+    '/CarShop_Project/BE/Controller/test.php/product/cars/delete' => 'ProductController@deleteProduct',
+    '/CarShop_Project/BE/Controller/test.php/product/cars/insert' => 'ProductController@insertProduct',
+    '/CarShop_Project/BE/Controller/test.php/product/cars/update' => 'ProductController@updateProduct',
+    
 ];
 
 // Kiểm tra xem route có tồn tại trong danh sách không
@@ -31,6 +41,8 @@ if (array_key_exists($request_uri, $routes)) {
     // echo $link;
     // require_once $link;
     require_once "./AccountController.php";
+    require_once "./NewsController.php";
+    require_once "./ProductController.php";
     // echo "finish include file"
     // Khởi tạo đối tượng controller
     // echo $controller_file;

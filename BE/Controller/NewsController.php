@@ -22,10 +22,10 @@ class NewsController
         $newsInfo = $this->newsModel->get_new();
         if ($newsInfo) {
             header('Content-Type: application/json');
-            echo json_encode($newsInfo); // Trả về thông tin tài khoản dưới dạng JSON
+            echo json_encode($newsInfo); // Trả về thông tin tin tức dưới dạng JSON
         } else {
             http_response_code(404); // Not Found
-            // echo "Không tìm thấy thông tin tài khoản.";
+            // echo "Không tìm thấy thông tin tin tức.";
         }
     }
     public function updateNews ($data){
@@ -34,10 +34,6 @@ class NewsController
             echo "Phương thức không được phép. Yêu cầu sử dụng phương thức PUT.";
             return;
         }
-        // Giả sử data được truyền vào dưới dạng JSON, bạn cần giải mã nó thành mảng
-        // $decodedData = json_decode($data, true);
-        // echo "finish decode"
-        // Kiểm tra xem dữ liệu đã được giải mã thành công hay chưa
         if ($data === null) {
             http_response_code(400); // Bad Request
             echo "Dữ liệu không hợp lệ.";
@@ -53,7 +49,7 @@ class NewsController
         // echo "finish check"
         $result = $this->newsModel->update_new($new_id, $date, $title, $description, $content, $author_name, $image);
       echo $result;
-        if ($result) {
+    if ($result) {
           echo "Cập nhật thành công.";
       } else {
           echo "Cập nhật thất bại.";
@@ -68,9 +64,9 @@ class NewsController
         $new_id = $data['new_id'];
         $result = $this->newsModel->delete_new($new_id);
         if ($result) {
-            echo "Xóa tài khoản thành công.";
+            echo "Xóa tin tức thành công.";
         } else {
-            echo "Xóa tài khoản thất bại.";
+            echo "Xóa tin tức thất bại.";
         }
     }
 
@@ -88,9 +84,9 @@ class NewsController
         $image = $data['image'];
         $result = $this->newsModel->insert_new($date, $title, $description, $content, $author_name, $image);
         if ($result) {
-            echo "Đăng ký tài khoản thành công.";
+            echo "Đăng ký tin tức thành công.";
         } else {
-            echo "Đăng ký tài khoản thất bại.";
+            echo "Đăng ký tin tức thất bại.";
         }      
     }
 

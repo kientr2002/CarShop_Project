@@ -23,7 +23,7 @@ export default function Feed() {
   }, [news]);
    useEffect(() => {
     axios
-      .get("http://localhost/CarShop_Project/BE/Controller/index.php/news/get")
+      .get("http://localhost/CarShop_Project/BE/Controller/test.php/news/get")
       .then((response) => setNews(response.data))
       .catch((error) => console.log(error));
   }, []);

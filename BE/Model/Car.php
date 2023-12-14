@@ -3,7 +3,7 @@ require_once "database.php";
 
 header('Content-Type: application/json');
 
-class Car{
+class car{
     public $name;
     public $id;
     public $price;

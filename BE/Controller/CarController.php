@@ -6,16 +6,16 @@ header('Content-Type: application/json');
 require_once "../Model/Car.php";
 class CarController{
     function get_img($id){
-        $car = new Car($id);
+        $car = new car($id);
         return $car->get_img();
     }
 
     function get_specification($id){
-        $car = new Car($id);
+        $car = new car($id);
         return $car->get_specification();
     }
     function get_comment_rating($id){
-        $car = new Car($id);
+        $car = new car($id);
         return $car->get_comment_rating();
     }
     function post_comment_rating($customer_id, $car_id, $content, $rating){
