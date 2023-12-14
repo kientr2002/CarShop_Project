@@ -23,7 +23,19 @@
             echo json_encode(["status" => "error", "data" => ["msg" => "Query failed: " . $e->getMessage()]]);
         }
     }
-
+    //GET NEWS DETAIL
+    function get_new_detail($new_id){
+      try {
+          $query = "SELECT * FROM news WHERE new_id =" .$new_id. ";";
+          $statement = $this->database->query($query);
+          $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+          
+          echo json_encode($result);
+          
+      } catch (PDOException $e) {
+          echo json_encode(["status" => "error", "data" => ["msg" => "Query failed: " . $e->getMessage()]]);
+      }
+    }
   //INSERT METHOD  
     function insert_new($date, $title, $description, $content, $author_name, $image)
       {

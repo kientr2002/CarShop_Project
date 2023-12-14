@@ -4,7 +4,24 @@
 // Lấy phần đường dẫn sau domain
 $request_uri = $_SERVER['REQUEST_URI'];
 // echo $request_uri;
+//Xử lý trong trường hợp uri có tham số đầu vào
+$input_value_flag = 0; 
+$data_uri = "";
+if (strpos($request_uri, '?') !== false){   
+    $url_parts = parse_url($request_uri);
+    $request_uri = $url_parts['path'];
+    $query_string = $url_parts['query'];
 
+    // Chuyển đổi chuỗi query thành mảng dữ liệu
+    parse_str($query_string, $query_array);
+
+    // Chuyển đổi mảng thành JSON
+    $data_uri = json_encode($query_array);
+    $data_uri = json_decode($data_uri, true);
+    // echo json_encode($query_array);
+    // Hiển thị kết quả JSON
+    // echo "Kết quả JSON: $data_uri";
+}
 // Tạo một danh sách các route và controller tương ứng
 $routes = [
     '/CarShop_Project/BE/Controller/test.php/account/get' => 'AccountController@getAccount',
@@ -15,6 +32,7 @@ $routes = [
     '/product/create' => 'ProductController@createProduct',
     // News
     '/CarShop_Project/BE/Controller/test.php/news/get' => 'NewsController@getNews',
+    '/CarShop_Project/BE/Controller/test.php/newsdetail/get' => 'NewsController@getNewsDetail',
     '/CarShop_Project/BE/Controller/test.php/news/update' => 'NewsController@updateNews',
     '/CarShop_Project/BE/Controller/test.php/news/delete' => 'NewsController@deleteNews',
     '/CarShop_Project/BE/Controller/test.php/news/insert' => 'NewsController@insertNews',
@@ -50,7 +68,7 @@ if (array_key_exists($request_uri, $routes)) {
     // parse_str(file_get_contents("php://input"), $_DATA); // Đọc dữ liệu từ body của request
     $_DATA = json_decode(file_get_contents("php://input"), true);
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        $controller->$method_name(); // Gọi phương thức getAccount
+        $controller->$method_name($data_uri); // Gọi phương thức getAccount      
     }
     // Xử lý các phương thức POST và PUT
     elseif ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT' || $_SERVER['REQUEST_METHOD'] === 'DELETE') {
