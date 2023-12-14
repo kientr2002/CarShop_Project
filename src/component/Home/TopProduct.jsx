@@ -6,7 +6,7 @@ export default function TopProduct(props){
 
   useEffect(() => {
     axios
-      .get("http://localhost/CarShop_Project/BE/Model/Products-data.php")
+      .get("http://localhost/CarShop_Project/BE/Model/storage/Products-data.php")
       .then((response) => setProducts(response.data))
       .catch((error) => console.log(error));
   }, []);

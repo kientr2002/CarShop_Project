@@ -32,7 +32,6 @@ $routes = [
     '/product/create' => 'ProductController@createProduct',
     // News
     '/CarShop_Project/BE/Controller/test.php/news/get' => 'NewsController@getNews',
-    '/CarShop_Project/BE/Controller/test.php/newsdetail/get' => 'NewsController@getNewsDetail',
     '/CarShop_Project/BE/Controller/test.php/news/update' => 'NewsController@updateNews',
     '/CarShop_Project/BE/Controller/test.php/news/delete' => 'NewsController@deleteNews',
     '/CarShop_Project/BE/Controller/test.php/news/insert' => 'NewsController@insertNews',
