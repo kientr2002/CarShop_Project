@@ -25,7 +25,7 @@ export default function Footer(){
             </div>
             </div>
             <div className="version">
-            <a href="#" className="nav-link"> © All Rights Reserved • Carserra • 2021</a>
+            <a href="#" className="nav-link"> © All Rights Reserved • Carserra • 2023</a>
             </div>
         </div>
     )

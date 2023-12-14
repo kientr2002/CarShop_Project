@@ -14,8 +14,6 @@ export class Info extends Component {
         <AboutUs/>
         </div>
         </div>
-
-        
     )
   }
 }
