@@ -119,6 +119,7 @@ const Form = () => {
     })
     .then(data => {
       console.log('Registration successful!', data);
+      navigation();
       // Gửi thông báo hoặc thực hiện các xử lý sau khi đăng ký thành công
     })
     .catch(error => {
