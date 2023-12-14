@@ -9,9 +9,6 @@
             if ($conn->connect_error) {
                 die("Kết nối đến cơ sở dữ liệu thất bại: " . $this->db->connect_error);
             }
-            else {
-                echo "Kết nối thành công";
-            }
         }
         public function get_account() {
             $query = "SELECT id, email, password, phone_number, name, birthday, address, avatar, security_question, security_answer, state, role FROM account";

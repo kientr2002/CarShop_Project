@@ -303,7 +303,7 @@ const handleKeyPress = (e, row) => {
           try {
             console.log(row.password);
             const response = await fetch(
-              "http://localhost/CarShop_Project/BE/Model/Update_Product.php",
+              "http://localhost/CarShop_Project/BE/Controller/index.php/account/update",
               {
                 method: "PUT",
                 headers: {
@@ -346,7 +346,7 @@ const handleKeyPress = (e, row) => {
           try {
             console.log(row.password);
             const response = await fetch(
-              "http://localhost/CarShop_Project/BE/Model/Delete_Product.php",
+              "http://localhost/CarShop_Project/BE/Controller/index.php/account/delete",
               {
                 method: "DELETE",
                 headers: {
