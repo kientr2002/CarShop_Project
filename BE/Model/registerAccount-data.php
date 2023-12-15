@@ -30,4 +30,6 @@ $role = 'customer';
 $stmt = $conn->query("INSERT INTO account (id,name, email, password, birthday, address, avatar, phone_number, security_question, security_answer,state, role)
 VALUES ('$id','$name', '$email', '$password', '$birth', '$address','$avatar', '$phone', '$question', '$answer','$state','$role')");
 
+
+$stmt = $conn->query("INSERT INTO customer (customer_id) VALUES ('$id');");
 ?>

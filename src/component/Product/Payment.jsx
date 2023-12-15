@@ -3,9 +3,21 @@ import { Col, Container, Row , Form, ToggleButton, Button} from "react-bootstrap
 import masterCard from "./mastercard.png"
 import visa from "./visa.jpg"
 import "./payment.css"
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
+function deleteCart(id) {
+  const data = {
+      code: id,
+    };
+axios.post("http://localhost/CarShop_Project/BE/Model/Cart-delete.php", data)
+.then((response) => {
+  console.log(response);
+})
+.catch((error) => {
+  console.log(error);
+});
+}
 const monthList = ["01","02","03","04","05","06","07","08","09","10","11","12"];
 const yearList = Array(50);
 
@@ -37,6 +49,7 @@ export default function(){
     const handleSumit = () =>{
         navigate("/");
     }
+
     return(
     <Container fluid>
         <Form onSubmit={handleSumit}>
@@ -167,7 +180,7 @@ export default function(){
                             <Form.Control type="text" name="cardCode"></Form.Control>
                         </Row>
                     </Row>
-                            <Button variant="primary" type="submit" id="buttonSubmit"> Confirm </Button>
+                            <Button variant="primary" type="submit" id="buttonSubmit" > Confirm </Button>
                 </Col>
             </Row>
             

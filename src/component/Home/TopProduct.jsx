@@ -20,7 +20,7 @@ export default function TopProduct(props){
             <div style={{ margin: '30px 10px' }}>
                 <div className="row">
                     {filteredProducts
-                    .filter((product) => product.brand === "Lamborghini")
+                    .filter((product) => product.brand === "Porsche" || product.brand === "Audi")
                     .map((product) => (
                         <div className="col-md-4" key={product.car_id}>
                         <Link to={`/products/product/${product['car_id']}`} style={{ textDecoration: 'none', color: 'black' }}>

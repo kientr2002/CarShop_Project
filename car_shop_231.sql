@@ -50,20 +50,20 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id`, `email`, `password`, `phone_number`, `name`, `birthday`, `address`, `avatar`, `security_question`, `security_answer`, `state`, `role`) VALUES
-(400, 'kientran@gmail.com', '1234', '01234567', 'Kiên Trần', '2023-04-21', 'Linh Trung, Thủ Đức', 'any', 'Sở thích của bạn là gì', 'Xem phim', 'True', 'admin'),
-(401, 'nguyenlinh@gmail.com', '5678', '09876543', 'Nguyễn Linh', '1990-12-15', 'Quận 1, TP.HCM', 'another', 'Màu sắc yêu thích của bạn là gì', 'Xanh dương', 'True', 'customer'),
-(402, 'phuonganh@yahoo.com', 'abcd', '01239876', 'Phương Anh', '1985-09-30', 'Quận 7, TP.HCM', 'some', 'Thú cưng bạn thích là gì', 'Chó', 'True', 'blockcustomer'),
-(403, 'thanhnguyen@hotmail.com', 'efgh', '09871234', 'Thanh Nguyễn', '1995-06-18', 'Quận 10, TP.HCM', 'avatar1', 'Bạn muốn làm gì vào cuối tuần?', 'Đi du lịch', 'True', 'admin'),
-(404, 'minhvuong@gmail.com', 'ijkl', '01237890', 'Minh Vương', '2000-03-25', 'Quận 3, TP.HCM', 'avatar2', 'Đội bóng bạn yêu thích là gì?', 'Manchester United', 'True', 'customer'),
-(405, 'thuytrang@yahoo.com', 'mnop', '01928374', 'Thùy Trang', '1988-11-30', 'Quận 5, TP.HCM', 'avatar3', 'Nơi bạn muốn đến trong kỳ nghỉ?', 'Hawaii', 'True', 'blockcustomer'),
-(406, 'hoanglong@gmail.com', 'qrst', '05671234', 'Hoàng Long', '1992-07-22', 'Quận Bình Thạnh, TP.HCM', 'avatar4', 'Nghề nghiệp mơ ước của bạn?', 'Chủ doanh nghiệp', 'True', 'admin'),
-(407, 'tuananh@hotmail.com', 'uvwx', '07654321', 'Tuấn Anh', '1987-09-12', 'Quận 9, TP.HCM', 'avatar5', 'Thức uống yêu thích của bạn là gì?', 'Cà phê', 'True', 'customer'),
-(408, 'thithao@yahoo.com', 'yzab', '03456789', 'Thị Thảo', '1994-02-28', 'Quận Gò Vấp, TP.HCM', 'avatar6', 'Môn thể thao bạn yêu thích là gì?', 'Bóng đá', 'True', 'blockcustomer'),
-(409, 'honglinh@gmail.com', '5678', '09871234', 'Hồng Linh', '1999-10-05', 'Quận Tân Bình, TP.HCM', 'avatar7', 'Bạn muốn trở thành ai khi lớn lên?', 'Giáo viên', 'True', 'admin'),
-(410, 'quanghuy@yahoo.com', 'abcd', '07654321', 'Quang Huy', '1996-08-20', 'Quận 2, TP.HCM', 'avatar8', 'Nơi bạn muốn sống trong tương lai?', 'Canada', 'True', 'customer'),
+(400, 'kientran@gmail.com', '1234', '01234567', 'Kiên Trần', '2023-04-21', 'Linh Trung, Thủ Đức','http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Sở thích của bạn là gì', 'Xem phim', 'True', 'admin'),
+(401, 'nguyenlinh@gmail.com', '5678', '09876543', 'Nguyễn Linh', '1990-12-15', 'Quận 1, TP.HCM', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Màu sắc yêu thích của bạn là gì', 'Xanh dương', 'True', 'customer'),
+(402, 'phuonganh@yahoo.com', 'abcd', '01239876', 'Phương Anh', '1985-09-30', 'Quận 7, TP.HCM', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Thú cưng bạn thích là gì', 'Chó', 'True', 'blockcustomer'),
+(403, 'thanhnguyen@hotmail.com', 'efgh', '09871234', 'Thanh Nguyễn', '1995-06-18', 'Quận 10, TP.HCM', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Bạn muốn làm gì vào cuối tuần?', 'Đi du lịch', 'True', 'admin'),
+(404, 'minhvuong@gmail.com', 'ijkl', '01237890', 'Minh Vương', '2000-03-25', 'Quận 3, TP.HCM', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Đội bóng bạn yêu thích là gì?', 'Manchester United', 'True', 'customer'),
+(405, 'thuytrang@yahoo.com', 'mnop', '01928374', 'Thùy Trang', '1988-11-30', 'Quận 5, TP.HCM', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Nơi bạn muốn đến trong kỳ nghỉ?', 'Hawaii', 'True', 'blockcustomer'),
+(406, 'hoanglong@gmail.com', 'qrst', '05671234', 'Hoàng Long', '1992-07-22', 'Quận Bình Thạnh, TP.HCM', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Nghề nghiệp mơ ước của bạn?', 'Chủ doanh nghiệp', 'True', 'admin'),
+(407, 'tuananh@hotmail.com', 'uvwx', '07654321', 'Tuấn Anh', '1987-09-12', 'Quận 9, TP.HCM', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Thức uống yêu thích của bạn là gì?', 'Cà phê', 'True', 'customer'),
+(408, 'thithao@yahoo.com', 'yzab', '03456789', 'Thị Thảo', '1994-02-28', 'Quận Gò Vấp, TP.HCM', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Môn thể thao bạn yêu thích là gì?', 'Bóng đá', 'True', 'blockcustomer'),
+(409, 'honglinh@gmail.com', '5678', '09871234', 'Hồng Linh', '1999-10-05', 'Quận Tân Bình, TP.HCM', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Bạn muốn trở thành ai khi lớn lên?', 'Giáo viên', 'True', 'admin'),
+(410, 'quanghuy@yahoo.com', 'abcd', '07654321', 'Quang Huy', '1996-08-20', 'Quận 2, TP.HCM', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Nơi bạn muốn sống trong tương lai?', 'Canada', 'True', 'customer'),
 (500, 'huynhnhan@gmail.com', '1234', '01234567', 'Huỳnh Nhân', '2023-04-21', 'Linh Trung, Thủ Đức', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Sở thích của bạn là gì', 'Xem phim', 'True', 'customer'),
 (600, 'hoangnam@gmail.com', '1234', '01234567', 'Hoàng Nam', '2023-04-21', 'Linh Trung, Thủ Đức', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Sở thích của bạn là gì', 'Xem phim', 'True', 'customer'),
-(700, 'chungquang@gmail.com', '1234', '01234567', 'Chúng Quang', '2023-04-21', 'Linh Trung, Thủ Đức', 'any', 'Sở thích của bạn là gì', 'Xem phim', 'True', 'customer');
+(700, 'chungquang@gmail.com', '1234', '01234567', 'Chúng Quang', '2023-04-21', 'Linh Trung, Thủ Đức', 'http://localhost/CarShop_Project/BE/uploads/avatar/any.jpg', 'Sở thích của bạn là gì', 'Xem phim', 'True', 'customer');
 
 -- --------------------------------------------------------
 
@@ -269,9 +269,21 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_id`) VALUES
+(400),
+(401),
+(402),
+(403),
+(404),
+(405),
+(406),
+(407),
+(408),
+(409),
+(410),
 (500),
 (600),
 (700);
+
 
 
 -- --------------------------------------------------------
